@@ -232,6 +232,7 @@ body {
 
 .news-section .section-title {
     color: #4C0E54; 
+    font-size: 220%;
 }
 
 
@@ -328,7 +329,8 @@ body {
 
 /* Events Section */
 .events-section .section-title {
-    color: #4C0E54; /* your color */
+    color: #4C0E54; 
+    font-size: 220%;
 }
 .events-section {
     padding: 5rem 2rem;
@@ -397,7 +399,8 @@ body {
 
 /* Team Section */
 .team-section .section-title {
-    color: #4C0E54; /* your color */
+    color: #4C0E54; 
+    font-size: 220%;
 }
 .team-section {
     padding: 5rem 2rem;
