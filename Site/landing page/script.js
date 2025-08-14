@@ -1,127 +1,80 @@
+// Component Loader Function
+function loadComponent(elementId, componentPath) {
+    const loadHTML = (filePath) => {
+        return fetch(filePath)
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                return response.text();
+            });
+    };
+
+    const loadCSS = (filePath) => {
+        return new Promise((resolve, reject) => {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = filePath;
+            link.onload = () => resolve();
+            link.onerror = () => reject(new Error(`Failed to load CSS: ${filePath}`));
+            document.head.appendChild(link);
+        });
+    };
+
+    const loadJS = (filePath) => {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = filePath;
+            script.onload = () => resolve();
+            script.onerror = () => reject(new Error(`Failed to load JS: ${filePath}`));
+            document.body.appendChild(script);
+        });
+    };
+
+    // Load component files
+    Promise.all([
+        loadHTML(`${componentPath}/index.html`),
+        loadCSS(`${componentPath}/style.css`),
+        loadJS(`${componentPath}/script.js`)
+    ]).then(([html]) => {
+        document.getElementById(elementId).innerHTML = html;
+    }).catch(err => {
+        console.error(`Error loading component ${elementId}:`, err);
+    });
+}
+
+// Load all components when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header', 'header');
+    loadComponent('hero', 'hero');
+    loadComponent('main-feature', 'main-feature');
+    loadComponent('news', 'news');
+    loadComponent('values', 'values');
+    loadComponent('events', 'events');
+    loadComponent('team', 'team');
+    loadComponent('footer', 'footer');
+});
+
+// Shared functionality
 // Smooth scrolling for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+document.addEventListener('click', (e) => {
+    if (e.target.matches('a[href^="#"]')) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(e.target.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
         }
-    });
-});
-
-// Header scroll effect
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
-    } else {
-        header.style.background = 'white';
-        header.style.backdropFilter = 'none';
     }
-});
-
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe all cards and sections for scroll animations
-document.querySelectorAll('.feature-card, .news-card, .event-card, .team-member, .value-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
-});
-
-// Events scroll functionality
-const eventsScroll = document.querySelector('.events-scroll');
-let scrollInterval;
-
-// Auto-scroll events
-const autoScrollEvents = () => {
-    scrollInterval = setInterval(() => {
-        if (eventsScroll.scrollLeft >= eventsScroll.scrollWidth - eventsScroll.clientWidth) {
-            eventsScroll.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-            eventsScroll.scrollBy({ left: 270, behavior: 'smooth' });
-        }
-    }, 3000);
-};
-
-// Initialize auto-scroll
-autoScrollEvents();
-
-// Pause auto-scroll on hover
-eventsScroll.addEventListener('mouseenter', () => {
-    clearInterval(scrollInterval);
-});
-
-eventsScroll.addEventListener('mouseleave', () => {
-    autoScrollEvents();
-});
-
-// Dynamic card hover effects
-document.querySelectorAll('.news-card, .event-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-        this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-        this.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
-    });
-});
-
-// Add click functionality to news cards
-document.querySelectorAll('.news-card').forEach(card => {
-    card.addEventListener('click', function() {
-        const newsTitle = this.querySelector('h3').textContent;
-        showNotification(`📰 "${newsTitle}" clicked! This would normally navigate to the full article.`);
-    });
-});
-
-// Add click functionality to event cards
-document.querySelectorAll('.event-card').forEach(card => {
-    card.addEventListener('click', function() {
-        const eventTitle = this.querySelector('h4').textContent;
-        const eventDate = this.querySelector('.event-date').textContent;
-        showNotification(`📅 Event "${eventTitle}" on ${eventDate} clicked! This would show event details.`);
-    });
-});
-
-// Team member interactions
-document.querySelectorAll('.team-member').forEach(member => {
-    member.addEventListener('click', function() {
-        const name = this.querySelector('.team-name').textContent;
-        const role = this.querySelector('.team-role').textContent;
-        showNotification(`👤 ${name} (${role}) profile clicked! This would show detailed information.`);
-    });
 });
 
 // Custom notification system
 function showNotification(message) {
-    // Remove existing notification if any
     const existingNotification = document.querySelector('.custom-notification');
     if (existingNotification) {
         existingNotification.remove();
     }
 
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = 'custom-notification';
     notification.textContent = message;
@@ -143,12 +96,10 @@ function showNotification(message) {
 
     document.body.appendChild(notification);
 
-    // Slide in animation
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
 
-    // Auto remove after 3 seconds
     setTimeout(() => {
         notification.style.transform = 'translateX(100%)';
         setTimeout(() => {
@@ -166,10 +117,9 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// Add keyboard navigation for accessibility
+// Global keyboard navigation for accessibility
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Tab') {
-        // Add focus indicators for better accessibility
         const focusedElement = document.activeElement;
         if (focusedElement.classList.contains('news-card') || 
             focusedElement.classList.contains('event-card') || 
@@ -179,11 +129,8 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Remove focus outline when clicking
 document.addEventListener('click', () => {
     document.querySelectorAll('.news-card, .event-card, .team-member').forEach(el => {
         el.style.outline = 'none';
     });
 });
-
-// Scroll to top
