@@ -6,7 +6,6 @@
     border-top: 1px solid #ccc;
 }
 
-/* Row layout */
 .footer-row {
     display: flex;
     justify-content: space-between;
