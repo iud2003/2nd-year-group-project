@@ -22,6 +22,7 @@ body {
 .back-btn {
     color: #4c0e4c;
     text-decoration: none;
+    margin-top: 5rem;
     margin-bottom: 2rem;
     display: inline-flex;
     align-items: center;
