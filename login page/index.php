@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +12,6 @@
         <!-- Home Button -->
         <div class="home-button">
             <a href="../landing page/main_index.html#header" id="homeBtn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
                 Home
             </a>
         </div>
@@ -26,25 +24,22 @@
                 <p class="subtitle">login</p>
             </div>
 
-            <form class="login-form" id="loginForm">
+            <?php
+            if (isset($_SESSION['error'])) {
+                echo "<p style='color:red; text-align:center; margin-bottom:16px;'>"
+                     . htmlspecialchars($_SESSION['error']) .
+                     "</p>";
+                unset($_SESSION['error']);
+            }
+            ?>
+
+            <form class="login-form" id="loginForm" action="login.php" method="POST">
                 <div class="input-group">
-                    <input 
-                        type="text" 
-                        id="indexNumber" 
-                        name="indexNumber" 
-                        placeholder="Index number" 
-                        required
-                    >
+                    <input type="text" id="indexNumber" name="indexNumber" placeholder="Index number" required>
                 </div>
 
                 <div class="input-group">
-                    <input 
-                        type="password" 
-                        id="password" 
-                        name="password" 
-                        placeholder="Password" 
-                        required
-                    >
+                    <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
 
                 <div class="forgot-password">
