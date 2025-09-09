@@ -1,0 +1,253 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Main Content */
+.main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.back-btn {
+    color: #4c0e4c;
+    text-decoration: none;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    
+}
+
+.back-btn:hover {
+    color: #4c0e4c;
+}
+
+/* Position Navigation Tabs */
+.position-tabs {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.position-tab {
+    padding: 1rem 0;
+    text-decoration: none;
+    color: #4c0e4c;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 600;
+}
+
+.position-tab.active,
+.position-tab:hover {
+    color: #4c0e4c;
+    border-bottom-color: #4c0e4c;
+}
+
+/* Position Sections */
+.position-section {
+    margin-bottom: 4rem;
+}
+
+.position-section.hidden {
+    display: none;
+}
+
+.position-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Players Grid */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.player-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: white;
+}
+
+.player-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.player-image {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+.player-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.player-card:hover .player-photo {
+    transform: scale(1.05);
+}
+
+.player-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 2.5rem 1.2rem 1.2rem;
+    color: white;
+}
+
+.player-number {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.player-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Loading Animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 0 1rem;
+    }
+
+    .position-tabs {
+        gap: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .position-tab {
+        font-size: 0.9rem;
+    }
+
+    .players-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .player-image {
+        height: 240px;
+    }
+
+    .position-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .players-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .player-image {
+        height: 200px;
+    }
+
+    .position-title {
+        font-size: 1.1rem;
+    }
+
+    .player-name {
+        font-size: 1rem;
+    }
+
+    .player-number {
+        font-size: 0.8rem;
+    }
+
+    .back-btn {
+        font-size: 0.9rem;
+    }
+}
+
+/* Additional Utility Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.error-state {
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
