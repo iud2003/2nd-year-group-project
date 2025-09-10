@@ -14,11 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows === 1) {
         $_SESSION["username"] = $indexNumber;
-        header("Location: ../../public/login page/welcome.php");
+        header("Location: ../../view/login page/welcome.php");
         exit();
     } else {
         $_SESSION['error'] = "Invalid index number or password";
-        header("Location: ../../public/login page/welcome.php");
+        header("Location: ../../view/login page/index.php");
         exit();
     }
 }

@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UOC Football - Team Portal Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../../public/login page/styles.css">
 </head>
 <body>
     <div class="container">
 
         <div class="home-button">
-            <a href="../landing page/main_index.html#header" id="homeBtn">Home</a>
+            <a href="../../../public/landing page/main_index.html#header" id="homeBtn">Home</a>
         </div>
 
         <div class="login-container">
             <div class="logo-section">
-                <img src="images/Logo.png" alt="UOC Football Logo" class="logo">
+                <img src="../../../public/login page/images/Logo.png" alt="UOC Football Logo" class="logo">
                 <h1 class="title">Team Portal</h1>
                 <p class="subtitle">login</p>
             </div>
@@ -30,7 +30,7 @@
             }
             ?>
 
-            <form class="login-form" id="loginForm" action="../../controller/login page/login.php" method="POST">
+            <form class="login-form" id="loginForm" action="..\..\controller\login page\login.php" method="POST">
                 <div class="input-group">
                     <input type="text" id="indexNumber" name="indexNumber" placeholder="Index number" required>
                 </div>
@@ -48,6 +48,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../../../public/login page/script.js"></script>
 </body>
 </html>
