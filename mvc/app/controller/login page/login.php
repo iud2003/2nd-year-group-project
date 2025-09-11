@@ -18,8 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Redirect specific usernames
         if ($indexNumber === "coach") {
             header("Location: ../../../public/player/player dashboard/home/index.html");
-        } elseif ($indexNumber === "apache_child_terminate") {
+        } 
+        elseif ($indexNumber === "apache_child_terminate") {
             header("Location: ../../view/kame portal/index.php");
+        }
+        elseif ($indexNumber === "admin") {
+            header("Location: ../../../public/admin/admin dashboard/home/index.html");
         } else {
             header("Location: ../../view/login page/welcome.php");
         }

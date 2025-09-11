@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UOC Football — Dashboard</title>
+
+  <!-- Remix Icons for quick, lightweight icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">UOC</div>
+        <div class="brand-text">
+          <span class="brand-title">FOOTBALL</span>
+          <span class="brand-sub">Console</span>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button class="icon-btn" aria-label="notifications">
+          <i class="ri-notification-3-line"></i>
+        </button>
+        <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=120&auto=format&fit=crop" alt="Profile"/>
+      </div>
+    </header>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+      <button class="qa-tile"><i class="ri-team-line"></i><span>Teams</span></button>
+      <button class="qa-tile"><i class="ri-bar-chart-2-line"></i><span>Test Results</span></button>
+      <button class="qa-tile"><i class="ri-calendar-event-line"></i><span>Matches</span></button>
+      <button class="qa-tile"><i class="ri-star-smile-line"></i><span>Events</span></button>
+      <button class="qa-tile"><i class="ri-archive-2-line"></i><span>Inventory</span></button>
+      <button class="qa-tile"><i class="ri-image-2-line"></i><span>Gallery</span></button>
+      <button class="qa-tile"><i class="ri-newspaper-line"></i><span>News</span></button>
+    </section>
+
+    <!-- Main Grid -->
+    <main class="grid">
+      <!-- Welcome -->
+      <section class="welcome card">
+        <div>
+          <h1>Welcome,<br/><span class="accent">Priyajan</span></h1>
+        </div>
+        <div class="date-wrap">
+          <div id="dateText">--</div>
+          <div id="timeText">--</div>
+        </div>
+        <div class="rings">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+        </div>
+      </section>
+
+      <!-- Notice Board -->
+      <section class="card board">
+        <header class="section-head">
+          <h2>Notice Board</h2>
+          <button class="mini-btn" id="addNotice"><i class="ri-add-line"></i> Add</button>
+        </header>
+        <ul class="list list-notices" id="noticeList">
+          <!-- populated by JS -->
+        </ul>
+      </section>
+
+      <!-- Upcoming -->
+      <section class="card board">
+        <header class="section-head">
+          <h2>Upcoming Matches &amp; Events</h2>
+          <button class="mini-btn" id="addUpcoming"><i class="ri-add-line"></i> Add</button>
+        </header>
+        <ul class="list list-upcoming" id="upcomingList">
+          <!-- populated by JS -->
+        </ul>
+      </section>
+
+      <!-- Inventory -->
+      <aside class="card inventory">
+        <h2>Inventory Status</h2>
+        <ul id="inventoryList" class="inv-list">
+          <!-- populated by JS -->
+        </ul>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

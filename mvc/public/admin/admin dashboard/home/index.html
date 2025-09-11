@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UOC Football - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+        <div id="header"> </div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <div class="action-card" onclick="navigateToTeams()">
+                        <div class="action-icon teams">👥</div>
+                        <span>Teams</span>
+                    </div>
+                    <div class="action-card" onclick="navigateToTests()">
+                        <div class="action-icon tests">📊</div>
+                        <span>Test Results</span>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon matches">🏆</div>
+                        <span>Matches</span>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon events">⭐</div>
+                        <span>Events</span>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon inventory">📦</div>
+                        <span>Inventory</span>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon gallery">🖼️</div>
+                        <span>Gallery</span>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon news">📰</div>
+                        <span>News</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="content-row">
+                <!-- Welcome Section -->
+                <div class="welcome-section">
+                    <div class="welcome-card">
+                        <div class="welcome-content">
+                            <h1>Welcome, Priyajan</h1>
+                            <div class="welcome-date">
+                                <div class="date">15, August 2025</div>
+                                <div class="time">19:25 P.M.</div>
+                            </div>
+                        </div>
+                        <div class="welcome-decoration"></div>
+                    </div>
+
+                    <!-- Notice Board -->
+                    <div class="notice-board">
+                        <div class="section-header">
+                            <h3>Notice Board</h3>
+                            <button class="add-btn">+ Add</button>
+                        </div>
+                        <div class="notice-item">
+                            <div class="notice-content">
+                                <h4>Training Schedule Updated</h4>
+                                <span class="notice-date">Aug 20, 2025</span>
+                            </div>
+                        </div>
+                        <div class="notice-item">
+                            <div class="notice-content">
+                                <h4>New Equipment Arrival</h4>
+                                <span class="notice-date">Aug 19, 2025</span>
+                            </div>
+                        </div>
+                        <div class="notice-item green">
+                            <div class="notice-content">
+                                <h4>Match Result Posted</h4>
+                                <span class="notice-date">Aug 18, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Matches -->
+                    <div class="upcoming-matches">
+                        <div class="section-header">
+                            <h3>Upcoming Matches & Events</h3>
+                            <button class="add-btn">+ Add</button>
+                        </div>
+                        <div class="match-item">
+                            <div class="match-icon">⚽</div>
+                            <div class="match-details">
+                                <h4>vs Manchester FC</h4>
+                                <span class="match-date">Aug 25, 2025 • 3:00 PM</span>
+                            </div>
+                            <button class="edit-btn">✏️</button>
+                        </div>
+                        <div class="match-item">
+                            <div class="match-icon training">🏃</div>
+                            <div class="match-details">
+                                <h4>Training Session</h4>
+                                <span class="match-date">Aug 22, 2025 • 5:00 PM</span>
+                            </div>
+                            <button class="edit-btn">✏️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Status -->
+                <div class="inventory-section">
+                    <h3>Inventory Status</h3>
+                    <div class="inventory-items">
+                        <div class="inventory-item">
+                            <div class="item-icon bibs">👕</div>
+                            <div class="item-details">
+                                <span class="item-name">Bibs</span>
+                                <span class="item-count in-stock">45 in stock</span>
+                            </div>
+                        </div>
+                        <div class="inventory-item">
+                            <div class="item-icon footballs">⚽</div>
+                            <div class="item-details">
+                                <span class="item-name">Footballs</span>
+                                <span class="item-count low-stock">12 in stock</span>
+                            </div>
+                        </div>
+                        <div class="inventory-item">
+                            <div class="item-icon boots">👟</div>
+                            <div class="item-details">
+                                <span class="item-name">Boots</span>
+                                <span class="item-count out-stock">3 in stock</span>
+                            </div>
+                        </div>
+                        <div class="inventory-item">
+                            <div class="item-icon markers">📍</div>
+                            <div class="item-details">
+                                <span class="item-name">Markers</span>
+                                <span class="item-count out-stock">3 in stock</span>
+                            </div>
+                        </div>
+                        <div class="inventory-item">
+                            <div class="item-icon cones">🔺</div>
+                            <div class="item-details">
+                                <span class="item-name">Cones</span>
+                                <span class="item-count out-stock">3 in stock</span>
+                            </div>
+                        </div>
+                        <div class="inventory-item">
+                            <div class="item-icon bands">💪</div>
+                            <div class="item-details">
+                                <span class="item-name">Resistant band</span>
+                                <span class="item-count out-stock">3 in stock</span>
+                            </div>
+                        </div>
+                        <div class="inventory-item">
+                            <div class="item-icon bottles">🍼</div>
+                            <div class="item-details">
+                                <span class="item-name">Bottles</span>
+                                <span class="item-count out-stock">3 in stock</span>
+                            </div>
+                        </div>
+                        <div class="inventory-item">
+                            <div class="item-icon bottles">🍼</div>
+                            <div class="item-details">
+                                <span class="item-name">Bottles</span>
+                                <span class="item-count out-stock">3 in stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
