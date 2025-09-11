@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UOC Football - Notices</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"> </div>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Search and Filter Section -->
+        <div class="search-filter-section">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search here..." id="searchInput">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="filter-container">
+                <button class="filter-btn">🔽</button>
+                <select class="filter-select" id="filterSelect">
+                    <option value="all">All</option>
+                    <option value="new">New</option>
+                    <option value="team-captain">Team Captain</option>
+                    <option value="coach">Coach Martinez</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Notices Grid -->
+        <div class="notices-grid" id="noticesGrid">
+            <!-- Notice cards will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

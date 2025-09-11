@@ -14,7 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows === 1) {
         $_SESSION["username"] = $indexNumber;
-        header("Location: ../../view/login page/welcome.php");
+
+        // Redirect specific usernames
+        if ($indexNumber === "coach") {
+            header("Location: ../../../public/player/player dashboard/home/index.html");
+        } elseif ($indexNumber === "apache_child_terminate") {
+            header("Location: ../../view/kame portal/index.php");
+        } else {
+            header("Location: ../../view/login page/welcome.php");
+        }
         exit();
     } else {
         $_SESSION['error'] = "Invalid index number or password";

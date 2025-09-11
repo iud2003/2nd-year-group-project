@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UOC Football - Weekly Meal Plan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header"> </div>
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Weekly Meal Plan</h1>
+            <p>Follow your personalized nutrition schedule for optimal performance</p>
+        </header>
+
+        <!-- Meal Tabs -->
+        <div class="meal-tabs">
+            <button class="tab-btn active" data-meal="breakfast">
+                <i class="fas fa-coffee"></i>
+                Breakfast
+            </button>
+            <button class="tab-btn" data-meal="lunch">
+                <i class="fas fa-sun"></i>
+                Lunch
+            </button>
+            <button class="tab-btn" data-meal="dinner">
+                <i class="fas fa-moon"></i>
+                Dinner
+            </button>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Meal Plan Grid -->
+            <div class="meal-grid">
+                <!-- Monday -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <h3>Monday</h3>
+                        <span class="calories">480 cal</span>
+                    </div>
+                    <ul class="meal-items">
+                        <li><i class="fas fa-circle"></i> Basmati Rice</li>
+                        <li><i class="fas fa-circle"></i> Scrambled Eggs</li>
+                        <li><i class="fas fa-circle"></i> Fresh Fruits</li>
+                        <li><i class="fas fa-circle"></i> Green Tea</li>
+                    </ul>
+                </div>
+
+                <!-- Tuesday -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <h3>Tuesday</h3>
+                        <span class="calories">520 cal</span>
+                    </div>
+                    <ul class="meal-items">
+                        <li><i class="fas fa-circle"></i> Oatmeal</li>
+                        <li><i class="fas fa-circle"></i> Boiled Eggs</li>
+                        <li><i class="fas fa-circle"></i> Banana</li>
+                        <li><i class="fas fa-circle"></i> Milk</li>
+                    </ul>
+                </div>
+
+                <!-- Wednesday -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <h3>Wednesday</h3>
+                        <span class="calories">495 cal</span>
+                    </div>
+                    <ul class="meal-items">
+                        <li><i class="fas fa-circle"></i> Whole Wheat Toast</li>
+                        <li><i class="fas fa-circle"></i> Omelet</li>
+                        <li><i class="fas fa-circle"></i> Orange Juice</li>
+                        <li><i class="fas fa-circle"></i> Yogurt</li>
+                    </ul>
+                </div>
+
+                <!-- Thursday -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <h3>Thursday</h3>
+                        <span class="calories">510 cal</span>
+                    </div>
+                    <ul class="meal-items">
+                        <li><i class="fas fa-circle"></i> Quinoa Bowl</li>
+                        <li><i class="fas fa-circle"></i> Poached Eggs</li>
+                        <li><i class="fas fa-circle"></i> Avocado</li>
+                        <li><i class="fas fa-circle"></i> Herbal Tea</li>
+                    </ul>
+                </div>
+
+                <!-- Friday -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <h3>Friday</h3>
+                        <span class="calories">475 cal</span>
+                    </div>
+                    <ul class="meal-items">
+                        <li><i class="fas fa-circle"></i> Pancakes</li>
+                        <li><i class="fas fa-circle"></i> Honey</li>
+                        <li><i class="fas fa-circle"></i> Berries</li>
+                        <li><i class="fas fa-circle"></i> Coffee</li>
+                    </ul>
+                </div>
+
+                <!-- Saturday -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <h3>Saturday</h3>
+                        <span class="calories">530 cal</span>
+                    </div>
+                    <ul class="meal-items">
+                        <li><i class="fas fa-circle"></i> Smoothie Bowl</li>
+                        <li><i class="fas fa-circle"></i> Granola</li>
+                        <li><i class="fas fa-circle"></i> Nuts</li>
+                        <li><i class="fas fa-circle"></i> Protein Shake</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Daily Nutrition -->
+                <div class="nutrition-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Daily Nutrition</h3>
+                    </div>
+                    <div class="nutrition-stats">
+                        <div class="stat">
+                            <span class="label">Calories</span>
+                            <span class="value">2,850</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Protein</span>
+                            <span class="value">185g</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Carbs</span>
+                            <span class="value">320g</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Fat</span>
+                            <span class="value">95g</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hydration-tip">
+                        <h4>Hydration Tip</h4>
+                        <p>Drink 3-4 liters of water daily. Increase intake during training sessions.</p>
+                    </div>
+                </div>
+
+                <!-- Coach Updates -->
+                <div class="updates-card">
+                    <div class="card-header">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Coach Updates</h3>
+                    </div>
+                    
+                    <div class="update-item warning">
+                        <div class="update-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="update-content">
+                            <h4>Meal Plan Update</h4>
+                            <p>Added extra protein for Thursday due to intensive training session.</p>
+                            <span class="time">2 hours ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="update-item success">
+                        <div class="update-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="update-content">
+                            <h4>Nutrition Goal</h4>
+                            <p>Great job maintaining your meal schedule this week!</p>
+                            <span class="time">1 day ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

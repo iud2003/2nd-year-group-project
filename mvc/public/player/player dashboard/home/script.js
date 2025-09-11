@@ -20,7 +20,7 @@ function loadComponent(elementId, componentPath) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header', 'header'); // dynamically load header
+    loadComponent('header', '../header'); // dynamically load header
 });
 
 

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UOC Football - Performance Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header"> </div>
+
+    <div class="container">
+        <h1 class="page-title">Performance Overview</h1>
+        
+        <!-- Performance Metrics -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="circular-progress" data-percentage="85">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring-circle" cx="60" cy="60" r="50"></circle>
+                    </svg>
+                    <div class="progress-text">
+                        <span class="percentage">85%</span>
+                    </div>
+                </div>
+                <h3>Stamina</h3>
+                <p class="metric-label">Excellent</p>
+            </div>
+
+            <div class="metric-card">
+                <div class="circular-progress" data-percentage="78">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring-circle" cx="60" cy="60" r="50"></circle>
+                    </svg>
+                    <div class="progress-text">
+                        <span class="percentage">78%</span>
+                    </div>
+                </div>
+                <h3>Speed</h3>
+                <p class="metric-label">Good</p>
+            </div>
+
+            <div class="metric-card">
+                <div class="circular-progress" data-percentage="92">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring-circle" cx="60" cy="60" r="50"></circle>
+                    </svg>
+                    <div class="progress-text">
+                        <span class="percentage">92%</span>
+                    </div>
+                </div>
+                <h3>Accuracy</h3>
+                <p class="metric-label">Excellent</p>
+            </div>
+
+            <div class="metric-card">
+                <div class="circular-progress" data-percentage="81">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring-circle" cx="60" cy="60" r="50"></circle>
+                    </svg>
+                    <div class="progress-text">
+                        <span class="percentage">81%</span>
+                    </div>
+                </div>
+                <h3>Overall</h3>
+                <p class="metric-label">Good</p>
+            </div>
+        </div>
+
+        <div class="charts-section">
+            <!-- Fitness Test Trends -->
+            <div class="chart-container">
+                <h2>Fitness Test Trends</h2>
+                <canvas id="trendsChart" width="400" height="300"></canvas>
+            </div>
+
+            <!-- Monthly Comparison -->
+            <div class="comparison-container">
+                <h2>Monthly Comparison</h2>
+                <div class="comparison-items">
+                    <div class="comparison-item">
+                        <div class="comparison-icon green">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="comparison-content">
+                            <h4>Goals Scored</h4>
+                            <p>This month vs last month</p>
+                        </div>
+                        <div class="comparison-value">
+                            <span class="percentage green">+25%</span>
+                            <span class="detail">8 vs 6</span>
+                        </div>
+                    </div>
+
+                    <div class="comparison-item">
+                        <div class="comparison-icon blue">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="comparison-content">
+                            <h4>Minutes Played</h4>
+                            <p>This month vs last month</p>
+                        </div>
+                        <div class="comparison-value">
+                            <span class="percentage blue">+12%</span>
+                            <span class="detail">450 vs 402</span>
+                        </div>
+                    </div>
+
+                    <div class="comparison-item">
+                        <div class="comparison-icon orange">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="comparison-content">
+                            <h4>Sprint Speed</h4>
+                            <p>This month vs last month</p>
+                        </div>
+                        <div class="comparison-value">
+                            <span class="percentage orange">+8%</span>
+                            <span class="detail">28.5 vs 26.4 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Match Performance Stats -->
+        <div class="stats-section">
+            <h2>Match Performance Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-card purple">
+                    <div class="stat-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Goals</div>
+                </div>
+
+                <div class="stat-card blue">
+                    <div class="stat-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Assists</div>
+                </div>
+
+                <div class="stat-card green">
+                    <div class="stat-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="stat-number">456</div>
+                    <div class="stat-label">Passes</div>
+                </div>
+
+                <div class="stat-card orange">
+                    <div class="stat-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <div class="stat-number">890</div>
+                    <div class="stat-label">Minutes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

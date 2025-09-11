@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UOC Football - Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-filter="all">All Events</button>
+                <button class="tab-btn" data-filter="matches">Matches Only</button>
+                <button class="tab-btn" data-filter="training">Training Only</button>
+            </div>
+
+            <div class="events-grid" id="events-grid">
+                <!-- Events will be dynamically generated here -->
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn" id="prev-btn">Previous</button>
+                <button class="pagination-btn active" data-page="1">1</button>
+                <button class="pagination-btn" data-page="2">2</button>
+                <button class="pagination-btn" data-page="3">3</button>
+                <button class="pagination-btn" id="next-btn">Next</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
