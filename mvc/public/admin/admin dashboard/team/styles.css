@@ -5,23 +5,21 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #f5f5f7;
-    color: #1d1d1f;
-    line-height: 1.5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
 }
 
 /* Header Styles */
 .header {
-    background: white;
-    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    padding: 1rem 2rem;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .header-left {
@@ -35,13 +33,13 @@ body {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #007aff;
-    transition: opacity 0.2s;
-    padding: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
 }
 
 .back-btn:hover {
-    opacity: 0.7;
+    background-color: #f1f5f9;
 }
 
 .logo {
@@ -51,38 +49,38 @@ body {
 }
 
 .logo-icon {
-    width: 32px;
-    height: 32px;
-    background: linear-gradient(135deg, #8B5FBF, #6366F1);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
     border-radius: 8px;
     position: relative;
 }
 
-.logo-icon::before {
+.logo-icon::after {
     content: '⚽';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.2;
 }
 
 .logo-title {
     font-weight: 700;
-    font-size: 16px;
-    color: #8B5FBF;
+    font-size: 1.1rem;
+    color: #1e293b;
 }
 
 .logo-subtitle {
+    font-size: 0.75rem;
+    color: #64748b;
     font-weight: 500;
-    font-size: 14px;
-    color: #8B5FBF;
+    letter-spacing: 0.05em;
 }
 
 .header-right {
@@ -94,34 +92,34 @@ body {
 .notification-btn {
     background: none;
     border: none;
-    cursor: pointer;
     padding: 0.5rem;
-    border-radius: 8px;
-    transition: background-color 0.2s;
-    color: #86868b;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s;
 }
 
 .notification-btn:hover {
-    background-color: #f5f5f7;
+    background-color: #f1f5f9;
+    color: #1e293b;
 }
 
 .profile-avatar {
     width: 40px;
     height: 40px;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
     border-radius: 50%;
-    overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s;
+    position: relative;
 }
 
-.profile-avatar:hover {
-    transform: scale(1.05);
-}
-
-.profile-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.profile-avatar::after {
+    content: '👤';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
 }
 
 /* Main Content */
@@ -132,32 +130,32 @@ body {
 }
 
 .page-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #1d1d1f;
+    color: #1e293b;
     margin-bottom: 2rem;
 }
 
 /* Teams Grid */
 .teams-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
 }
 
-/* Team Cards */
+/* Team Card Base Styles */
 .team-card {
     background: white;
-    border-radius: 16px;
+    border-radius: 1rem;
     padding: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    border: 1px solid #e5e5e7;
+    border: 1px solid #e2e8f0;
 }
 
 .team-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 /* Add Team Card */
@@ -167,21 +165,23 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    cursor: pointer;
     min-height: 280px;
-    border: 2px dashed #d1d1d6;
-    background: #fbfbfd;
+    border: 2px dashed #cbd5e1;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .add-team-card:hover {
-    border-color: #8B5FBF;
-    background: white;
+    border-color: #6366f1;
+    background: #f0f9ff;
+    transform: translateY(-2px);
 }
 
 .add-team-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #8B5FBF, #6366F1);
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -189,26 +189,26 @@ body {
     font-size: 2rem;
     color: white;
     margin-bottom: 1rem;
-    transition: transform 0.2s;
-}
-
-.add-team-card:hover .add-team-icon {
-    transform: scale(1.1);
+    font-weight: 300;
 }
 
 .add-team-card h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #1d1d1f;
+    color: #1e293b;
     margin-bottom: 0.5rem;
 }
 
 .add-team-card p {
-    color: #86868b;
+    color: #64748b;
     font-size: 0.9rem;
 }
 
-/* Existing Team Cards */
+/* Existing Team Card */
+.existing-team-card {
+    position: relative;
+}
+
 .team-header {
     display: flex;
     justify-content: space-between;
@@ -217,19 +217,17 @@ body {
 }
 
 .team-logo {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    color: white;
-    box-shadow: 0 2px 8px rgba(139, 95, 191, 0.3);
 }
 
 .team-logo.purple {
-    background: linear-gradient(135deg, #8B5FBF, #6366F1);
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
 }
 
 .team-actions {
@@ -238,31 +236,48 @@ body {
 }
 
 .action-btn {
-    background: #f5f5f7;
-    border: none;
+    background: none;
+    border: 1px solid #e2e8f0;
+    width: 32px;
+    height: 32px;
     border-radius: 8px;
-    padding: 0.5rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    color: #86868b;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s;
 }
 
 .action-btn:hover {
-    background: #e8e8ed;
-    color: #1d1d1f;
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #1e293b;
+}
+
+.edit-btn:hover {
+    background-color: #fef3c7;
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+.delete-btn:hover {
+    background-color: #fee2e2;
+    border-color: #ef4444;
+    color: #ef4444;
 }
 
 .team-name {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1d1d1f;
+    color: #1e293b;
     margin-bottom: 1rem;
 }
 
 .team-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     margin-bottom: 1.5rem;
 }
 
@@ -270,20 +285,37 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
-    color: #86868b;
 }
 
 .detail-icon {
-    width: 16px;
-    height: 16px;
-    color: #86868b;
-    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+}
+
+.detail-icon.calendar {
+    background-color: #ddd6fe;
+    color: #8b5cf6;
+}
+
+.detail-icon.trophy {
+    background-color: #fef3c7;
+    color: #f59e0b;
+}
+
+.detail-icon.coach {
+    background-color: #dcfce7;
+    color: #16a34a;
 }
 
 .detail-text {
-    color: #86868b;
+    font-size: 0.9rem;
+    color: #475569;
+    font-weight: 500;
 }
 
 .team-footer {
@@ -291,38 +323,42 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    border-top: 1px solid #f5f5f7;
+    border-top: 1px solid #f1f5f9;
 }
 
 .player-count {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #86868b;
+    color: #64748b;
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .player-icon {
-    width: 16px;
-    height: 16px;
-    color: #86868b;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6366f1;
 }
 
 .view-details-btn {
-    background: linear-gradient(135deg, #8B5FBF, #6366F1);
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
     color: white;
     border: none;
-    border-radius: 20px;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
-    font-size: 0.9rem;
 }
 
 .view-details-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(139, 95, 191, 0.4);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
 }
 
 /* Modal Styles */
@@ -331,14 +367,13 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
     z-index: 1000;
-    align-items: center;
     justify-content: center;
-    padding: 2rem;
+    align-items: center;
 }
 
 .modal-overlay.active {
@@ -347,24 +382,24 @@ body {
 
 .modal {
     background: white;
-    border-radius: 20px;
-    padding: 2rem;
+    border-radius: 1rem;
+    padding: 0;
+    width: 90%;
     max-width: 500px;
-    width: 100%;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     animation: modalSlideIn 0.3s ease-out;
 }
 
 @keyframes modalSlideIn {
     from {
+        transform: scale(0.9) translateY(-20px);
         opacity: 0;
-        transform: translateY(30px) scale(0.95);
     }
     to {
+        transform: scale(1) translateY(0);
         opacity: 1;
-        transform: translateY(0) scale(1);
     }
 }
 
@@ -372,7 +407,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .modal-logo {
@@ -384,158 +420,170 @@ body {
 .close-btn {
     background: none;
     border: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    color: #86868b;
-    transition: color 0.2s;
-    padding: 0.25rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    transition: all 0.2s;
 }
 
 .close-btn:hover {
-    color: #ff3b30;
+    background-color: #f1f5f9;
+    color: #1e293b;
 }
 
 .modal-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #1d1d1f;
-    margin-bottom: 2rem;
+    color: #1e293b;
+    padding: 0 1.5rem 1rem;
 }
 
-/* Form Styles */
 .add-team-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    padding: 0 1.5rem 1.5rem;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
+    display: block;
     font-weight: 600;
-    color: #1d1d1f;
+    color: #374151;
+    margin-bottom: 0.5rem;
     font-size: 0.9rem;
 }
 
 .form-group input {
+    width: 100%;
     padding: 0.75rem;
-    border: 1px solid #d1d1d6;
+    border: 1px solid #d1d5db;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: border-color 0.2s;
-    background: white;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #8B5FBF;
-    box-shadow: 0 0 0 3px rgba(139, 95, 191, 0.1);
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
-.tournaments-list {
-    background: #f5f5f7;
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
+.tournaments-list, .achievements-list, .players-list, .coaches-list {
+    margin-bottom: 0.75rem;
 }
 
 .tournament-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
     font-size: 0.9rem;
-    color: #1d1d1f;
 }
 
 .tournament-actions {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
 }
 
-.edit-tournament-btn,
-.delete-tournament-btn {
+.edit-tournament-btn, .delete-tournament-btn {
     background: none;
     border: none;
-    cursor: pointer;
-    padding: 0.25rem;
+    width: 24px;
+    height: 24px;
     border-radius: 4px;
-    transition: background 0.2s;
-    color: #86868b;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.edit-tournament-btn:hover,
-.delete-tournament-btn:hover {
-    background: rgba(134, 134, 139, 0.1);
-}
-
-.add-btn {
-    background: linear-gradient(135deg, #8B5FBF, #6366F1);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    font-weight: 600;
     cursor: pointer;
+    color: #64748b;
     transition: all 0.2s;
-    font-size: 1.2rem;
-    width: fit-content;
 }
 
-.add-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(139, 95, 191, 0.4);
+.edit-tournament-btn:hover {
+    background-color: #fef3c7;
+    color: #f59e0b;
+}
+
+.delete-tournament-btn:hover {
+    background-color: #fee2e2;
+    color: #ef4444;
 }
 
 .coach-tabs {
     display: flex;
-    background: #f5f5f7;
-    border-radius: 8px;
-    padding: 0.25rem;
-    margin-bottom: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .tab-btn {
-    flex: 1;
-    background: none;
-    border: none;
-    padding: 0.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    background: white;
     border-radius: 6px;
+    font-size: 0.875rem;
     cursor: pointer;
-    font-weight: 500;
     transition: all 0.2s;
-    color: #86868b;
 }
 
 .tab-btn.active {
-    background: white;
-    color: #8B5FBF;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background: #6366f1;
+    color: white;
+    border-color: #6366f1;
+}
+
+.tab-btn:not(.active):hover {
+    background: #f8fafc;
+    border-color: #9ca3af;
+}
+
+.add-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px dashed #cbd5e1;
+    background: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.add-btn:hover {
+    border-color: #6366f1;
+    color: #6366f1;
+    background: #f0f9ff;
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #8B5FBF, #6366F1);
+    width: 100%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
     color: white;
     border: none;
-    border-radius: 12px;
-    padding: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 1rem;
     font-weight: 600;
-    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.2s;
     margin-top: 1rem;
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(139, 95, 191, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
 }
 
 /* Responsive Design */
@@ -548,34 +596,45 @@ body {
         padding: 1rem;
     }
     
-    .page-title {
-        font-size: 2rem;
-    }
-    
     .teams-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
     
     .modal {
+        width: 95%;
         margin: 1rem;
-        padding: 1.5rem;
+    }
+    
+    .team-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .view-details-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-left {
+        gap: 0.5rem;
     }
     
     .logo-text {
         display: none;
     }
-}
-
-/* Background Pattern */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f5f5f7' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    z-index: -1;
-    opacity: 0.5;
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    .team-card {
+        padding: 1rem;
+    }
+    
+    .add-team-card {
+        min-height: 200px;
+    }
 }
